@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, moveInput * speed, 0.15f);
-        transform.rotation = Quaternion.Euler(0, 0, -moveInput.x * 10f);
+        //transform.rotation = Quaternion.Euler(0, 0, -moveInput.x * 10f);
     }
 
 }

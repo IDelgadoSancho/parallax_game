@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -11,12 +11,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Environment
+  - PlayerProjectile
+  - EnemyProjectile
+  - Trigger
   - 
   - 
   - 
@@ -41,6 +41,30 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background_Far
+    uniqueID: 348460393
+    locked: 0
+  - name: Background_Mid
+    uniqueID: 4002807777
+    locked: 0
+  - name: Background_Near
+    uniqueID: 1109035529
+    locked: 0
+  - name: Environment
+    uniqueID: 532780489
+    locked: 0
+  - name: Enemies
+    uniqueID: 2564282815
+    locked: 0
+  - name: Player
+    uniqueID: 1533625033
+    locked: 0
+  - name: Projectiles
+    uniqueID: 951175075
+    locked: 0
+  - name: UI
+    uniqueID: 3792245545
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1
@@ -50,27 +74,3 @@ TagManager:
   - Light Layer 5
   - Light Layer 6
   - Light Layer 7
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
