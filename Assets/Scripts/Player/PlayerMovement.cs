@@ -5,6 +5,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 8f;
 
+    [SerializeField] private Animator exhaustAnimator;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePoint;
+
     private Rigidbody2D rb;
     private InputSystem_Actions inputActions;
     private Vector2 moveInput;
@@ -37,7 +41,16 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, moveInput * speed, 0.15f);
+        exhaustAnimator.SetBool("isMoving", moveInput.sqrMagnitude > 0.01f);
         //transform.rotation = Quaternion.Euler(0, 0, -moveInput.x * 10f);
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        }
     }
 
 }
