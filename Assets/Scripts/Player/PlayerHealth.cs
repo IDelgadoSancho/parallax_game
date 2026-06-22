@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int health = 3;
+    [SerializeField] private int maxHealth = 16;
 
-    public void TakeDamage(int damage)
+    public int CurrentHealth { get; private set; }
+
+    public int MaxHealth => maxHealth;
+
+    private void Awake()
     {
-        health -= damage;
+        CurrentHealth = maxHealth;
+    }
 
-        Debug.Log("Vida: " + health);
+    public void TakeDamage(int dmg)
+    {
+        CurrentHealth -= dmg;
+        CurrentHealth = Mathf.Max(CurrentHealth, 0);
 
-        if (health <= 0)
+        if (CurrentHealth <= 0)
         {
             Debug.Log("Game Over");
         }
