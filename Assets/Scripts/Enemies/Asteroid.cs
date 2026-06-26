@@ -1,27 +1,31 @@
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour
+public class Asteroid : MonoBehaviour, IDamageable
 {
     [SerializeField] private float speed = 3f;
+    [SerializeField] private int hp = 3;
 
     private void Update()
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void TakeDamage(int amount)
     {
-        if (other.CompareTag("Bullet"))
+        hp -= amount;
+
+        if (hp <= 0)
         {
-            Destroy(other.gameObject);
             Destroy(gameObject);
         }
-        else if (other.CompareTag("Player"))
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerHealth>()?.TakeDamage(1);
             Destroy(gameObject);
         }
     }
-
-
 }

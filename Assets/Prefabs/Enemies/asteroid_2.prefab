@@ -232,3 +232,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   speed: 3
+  hp: 3
