@@ -4,10 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 8f;
-
     [SerializeField] private Animator exhaustAnimator;
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform firePoint;
+    [SerializeField] private WeaponSlot weaponSlot;
 
     private Rigidbody2D rb;
     private InputSystem_Actions inputActions;
@@ -49,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            weaponSlot.currentWeapon?.Shoot();
         }
     }
 

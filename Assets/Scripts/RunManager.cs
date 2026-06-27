@@ -43,7 +43,7 @@ public class RunManager : MonoBehaviour
 
         if (Time.frameCount % 60 == 0)
         {
-            Debug.Log($"[RUN] Stage: {currentStage} | Time: {timer:F1}/{stageDuration} | Phase: {CurrentPhase}");
+            //Debug.Log($"[RUN] Stage: {currentStage} | Time: {timer:F1}/{stageDuration} | Phase: {CurrentPhase}");
         }
 
         if (timer >= stageDuration)
@@ -58,7 +58,7 @@ public class RunManager : MonoBehaviour
         timer = 0;
         CurrentPhase = Phase.Playing;
 
-        Debug.Log("[RUN] START");
+        //Debug.Log("[RUN] START");
         Debug.Log($"[RUN] Stage {currentStage} started");
 
         OnStageChanged?.Invoke(currentStage);

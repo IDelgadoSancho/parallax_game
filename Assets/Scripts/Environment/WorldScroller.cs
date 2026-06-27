@@ -17,7 +17,7 @@ public class WorldScroller : MonoBehaviour
 
         if (Mathf.Abs(speed - lastLoggedSpeed) > 0.1f)
         {
-            Debug.Log($"[WORLD] Stage: {RunManager.Instance.currentStage} | Speed: {speed:F2}");
+            //Debug.Log($"[WORLD] Stage: {RunManager.Instance.currentStage} | Speed: {speed:F2}");
             lastLoggedSpeed = speed;
         }
     }
